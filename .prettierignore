@@ -8,3 +8,5 @@
 
 /test/fixture.xml
 /test/__snapshots__/*
+
+.idea

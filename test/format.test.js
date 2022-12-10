@@ -63,3 +63,20 @@ test("singleAttributePerLine => true", async () => {
 
   expect(formatted).toMatchSnapshot();
 });
+
+test("xmlExpandSelfClosingTags => true", async () => {
+  const formatted = await format(fixture, {
+    xmlExpandSelfClosingTags: true
+  });
+
+  expect(formatted).toMatchSnapshot();
+});
+
+test("xmlWhitespaceSensitivity => ignore, xmlExpandSelfClosingTags => true", async () => {
+  const formatted = await format(fixture, {
+    xmlExpandSelfClosingTags: true,
+    xmlWhitespaceSensitivity: "ignore"
+  });
+
+  expect(formatted).toMatchSnapshot();
+});

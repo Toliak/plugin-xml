@@ -16,7 +16,7 @@ function getSupportLanguages() {
       // manually-maintained list. These two had been added manually. So in the
       // interest of not breaking anything, we'll add them back in here.
       if (language.name === "XML") {
-        language.extensions?.push(".inx", ".runsettings");
+        language.extensions?.push(".inx", ".runsettings", ".rels");
         language.extensions?.sort();
       }
 

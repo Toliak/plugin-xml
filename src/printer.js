@@ -262,7 +262,9 @@ const printer = {
         const space = opts.xmlSelfClosingSpace ? line : softline;
 
         if (SLASH_CLOSE) {
-          if (!opts.xmlExpandSelfClosingTags) {
+          if (opts.xmlExpandSelfClosingTags) {
+            return group([...parts, ">", "</", Name[0].image, ">"]);
+          } else {
             return group([...parts, space, SLASH_CLOSE[0].image]);
           }
         }
