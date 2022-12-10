@@ -1,5 +1,5 @@
 {
-  "name": "@prettier/plugin-xml",
+  "name": "prettier-plugin-xml-msword",
   "version": "1.2.0",
   "description": "prettier plugin for XML",
   "main": "dist/plugin.js",
@@ -11,9 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prettier/plugin-xml.git"
+    "url": "git+https://github.com/Toliak/prettier-plugin-xml-msword.git"
   },
-  "author": "Kevin Newton",
+  "author": "Anatolii Titov <a@toliak.ru>",
+  "contributors": [
+    "Kevin Newton"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/prettier/plugin-xml/issues"

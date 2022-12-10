@@ -1,23 +1,5 @@
 <h1 align="center">Prettier for XML</h1>
 
-<p align="center">
-  <a href="https://gitter.im/jlongster/prettier">
-    <img alt="Gitter" src="https://img.shields.io/gitter/room/jlongster/prettier.svg?style=flat-square">
-  </a>
-  <a href="https://github.com/prettier/plugin-xml/actions">
-    <img alt="GitHub Actions" src="https://img.shields.io/github/workflow/status/prettier/plugin-xml/Main?style=flat-square">
-  </a>
-  <a href="https://www.npmjs.com/package/@prettier/plugin-xml">
-    <img alt="NPM Version" src="https://img.shields.io/npm/v/@prettier/plugin-xml.svg?style=flat-square">
-  </a>
-  <a href="#badge">
-    <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
-  </a>
-  <a href="https://twitter.com/PrettierCode">
-    <img alt="Follow+Prettier+on+Twitter" src="https://img.shields.io/twitter/follow/prettiercode.svg?label=follow+prettier&style=flat-square">
-  </a>
-</p>
-
 `@prettier/plugin-xml` is a [prettier](https://prettier.io/) plugin for XML. `prettier` is an opinionated code formatter that supports multiple languages and integrates with most editors. The idea is to eliminate discussions of style in code review and allow developers to get back to thinking about code design instead.
 
 ## Getting started
