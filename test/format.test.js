@@ -64,6 +64,44 @@ test("singleAttributePerLine => true", async () => {
   expect(formatted).toMatchSnapshot();
 });
 
+test("xmlWhitespaceSensitivity => preserve", async () => {
+  const formatted = await format(fixture, {
+    xmlWhitespaceSensitivity: "preserve"
+  });
+
+  expect(formatted).toMatchSnapshot();
+});
+
+test("xmlSortAttributesByKey => true", async () => {
+  const formatted = await format(fixture, {
+    xmlSortAttributesByKey: true
+  });
+});
+
+test("xmlQuoteAttributes => preserve", async () => {
+  const formatted = await format(fixture, {
+    xmlQuoteAttributes: "preserve"
+  });
+
+  expect(formatted).toMatchSnapshot();
+});
+
+test("xmlQuoteAttributes => single", async () => {
+  const formatted = await format(fixture, {
+    xmlQuoteAttributes: "single"
+  });
+
+  expect(formatted).toMatchSnapshot();
+});
+
+test("xmlQuoteAttributes => double", async () => {
+  const formatted = await format(fixture, {
+    xmlQuoteAttributes: "double"
+  });
+
+  expect(formatted).toMatchSnapshot();
+});
+
 test("xmlExpandSelfClosingTags => true", async () => {
   const formatted = await format(fixture, {
     xmlExpandSelfClosingTags: true

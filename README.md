@@ -22,12 +22,12 @@ yarn add --dev prettier prettier-plugin-xml-msword
 The `prettier` executable is now installed and ready for use:
 
 ```bash
-./node_modules/.bin/prettier --write '**/*.xml'
+./node_modules/.bin/prettier --plugin=prettier-plugin-xml-msword --write '**/*.xml'
 ```
 
 ## Configuration
 
-Below are the options (from [`src/plugin.ts`](src/plugin.ts)) that `@prettier/plugin-xml` currently supports:
+Below are the options (from [`src/plugin.js`](src/plugin.ts)) that `@prettier/plugin-xml` currently supports:
 
 | API Option                 | CLI Option                       |  Default   | Description                                                                                                   |
 | -------------------------- | -------------------------------- | :--------: | ------------------------------------------------------------------------------------------------------------- |
@@ -38,6 +38,8 @@ Below are the options (from [`src/plugin.ts`](src/plugin.ts)) that `@prettier/pl
 | `xmlSelfClosingSpace`      | `--xml-self-closing-space`       |   `true`   | Adds a space before self-closing tags.                                                                        |
 | `xmlExpandSelfClosingTags` | `--xml-expand-self-closing-tags` |  `false`   | Expands empty tags (instead of making them self-closed).                                                      |
 | `xmlWhitespaceSensitivity` | `--xml-whitespace-sensitivity`   | `"strict"` | Options are `"strict"` and `"ignore"`. You may want `"ignore"`, [see below](#whitespace).                     |
+| `xmlQuoteAttributes`       | `--xml-quote-attributes`       | `"preserve"` | Options are `"preserve"`, `"single"`, and `"double"`                                                                     |
+| `xmlSortAttributesByKey`   | `--xml-sort-attributes-by-key` |   `false`    | Orders XML attributes by key alphabetically while prioritizing xmlns attributes.                                         |
 
 Any of these can be added to your existing [prettier configuration
 file](https://prettier.io/docs/en/configuration.html). For example:
@@ -51,7 +53,7 @@ file](https://prettier.io/docs/en/configuration.html). For example:
 Or, they can be passed to `prettier` as arguments:
 
 ```bash
-prettier --tab-width 4 --write '**/*.xml'
+prettier --plugin=prettier-plugin-xml-msword --tab-width 4 --write '**/*.xml'
 ```
 
 ### Whitespace
@@ -59,6 +61,8 @@ prettier --tab-width 4 --write '**/*.xml'
 In XML, by default, all whitespace inside elements has semantic meaning. For prettier to maintain its contract of not changing the semantic meaning of your program, this means the default for `xmlWhitespaceSensitivity` is `"strict"`. When running in this mode, prettier's ability to rearrange your markup is somewhat limited, as it has to maintain the exact amount of whitespace that you input within elements.
 
 If you're sure that the XML files that you're formatting do not require whitespace sensitivity, you can use the `"ignore"` option, as this will produce a standardized amount of whitespace. This will fix any indentation issues, and collapse excess blank lines (max of 1 blank line). For most folks most of the time, this is probably the option that you want.
+
+You can also use the `"preserve"` option, if you want to preserve the whitespace of text nodes within XML elements and attributes. See [#478](https://github.com/prettier/plugin-xml/issues/478) for more detail.
 
 ### Ignore ranges
 
@@ -71,6 +75,10 @@ You can use two special comments to get prettier to ignore formatting a specific
   <!-- prettier-ignore-end -->
 </foo>
 ```
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/prettier/plugin-xml.
 
 ## License
 

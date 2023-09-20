@@ -6,6 +6,54 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [3.2.1] - 2023-09-11
+
+### Added
+
+- Updated the documentation to reflect that you need to pass the plugin path now.
+
+### Changed
+
+- Error messages thrown by the plugin are now much closer to the error messages thrown by prettier.
+- Fixed a bug where self-closing tags that looked like embeds would throw an error.
+
+## [3.2.0] - 2023-08-08
+
+### Added
+
+- Respect `xml:space="preserve"` as an override to the `xmlWhitespaceSensitivity` option.
+
+## [3.1.1] - 2023-07-14
+
+### Changed
+
+- Required `prettier` as a peer dependency instead of a runtime dependency.
+
+## [3.1.0] - 2023-07-07
+
+### Added
+
+- the `xmlSortAttributesByKey: true | false` option has been added. See the README.
+- The `xmlQuoteAttributes: "preserve" | "single" | "double"` option has been added. See the README.
+
+## [3.0.0] - 2023-07-06
+
+### Changed
+
+- See alpha release notes.
+
+## [3.0.0-alpha.0] - 2023-06-02
+
+### Added
+
+- The `xmlWhitespaceSensitivity: "preserve"` option has been added. See the README.
+
+### Changed
+
+- Fixed the behavior of `bracketSameLine` when the attributes on the parent element broke into multiple lines.
+- **BREAKING** Require prettier v3.
+- **BREAKING** Migrate to ESM modules.
+
 ## [2.2.0] - 2022-05-12
 
 ### Added
@@ -191,7 +239,13 @@ and it will maintain your formatting.
 
 - Initial release 🎉
 
-[unreleased]: https://github.com/prettier/plugin-xml/compare/v2.2.0...HEAD
+[unreleased]: https://github.com/prettier/plugin-xml/compare/v3.2.1...HEAD
+[3.2.1]: https://github.com/prettier/plugin-xml/compare/v3.2.0...v3.2.1
+[3.2.0]: https://github.com/prettier/plugin-xml/compare/v3.1.1...v3.2.0
+[3.1.1]: https://github.com/prettier/plugin-xml/compare/v3.1.0...v3.1.1
+[3.1.0]: https://github.com/prettier/plugin-xml/compare/v3.0.0...v3.1.0
+[3.0.0]: https://github.com/prettier/plugin-xml/compare/v3.0.0-alpha.0...v3.0.0
+[3.0.0-alpha.0]: https://github.com/prettier/plugin-xml/compare/v2.2.0...v3.0.0-alpha.0
 [2.2.0]: https://github.com/prettier/plugin-xml/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/prettier/plugin-xml/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/prettier/plugin-xml/compare/v2.0.0...v2.0.1

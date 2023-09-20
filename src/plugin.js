@@ -36,11 +36,46 @@ const plugin = {
           description: "Whitespaces are considered sensitive in all elements."
         },
         {
+          value: "preserve",
+          description:
+            "Whitespaces within text nodes in XML elements and attributes are considered sensitive."
+        },
+        {
           value: "ignore",
           description: "Whitespaces are considered insensitive in all elements."
         }
       ],
       since: "0.6.0"
+    },
+    xmlSortAttributesByKey: {
+      type: "boolean",
+      category: "XML",
+      default: false,
+      description:
+        "Orders XML attributes by key alphabetically while prioritizing xmlns attributes."
+    },
+    xmlQuoteAttributes: {
+      type: "choice",
+      category: "XML",
+      default: "preserve",
+      description: "How to handle whitespaces in XML.",
+      choices: [
+        {
+          value: "preserve",
+          description:
+            "Quotes in attribute values will be preserved as written."
+        },
+        {
+          value: "single",
+          description:
+            "Quotes in attribute values will be converted to consistent single quotes and other quotes in the string will be escaped."
+        },
+        {
+          value: "double",
+          description:
+            "Quotes in attribute values will be converted to consistent double quotes and other quotes in the string will be escaped."
+        }
+      ]
     }
   },
   defaultOptions: {
