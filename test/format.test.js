@@ -104,7 +104,8 @@ test("xmlQuoteAttributes => double", async () => {
 
 test("xmlExpandSelfClosingTags => true", async () => {
   const formatted = await format(fixture, {
-    xmlExpandSelfClosingTags: true
+    xmlExpandSelfClosingTags: true,
+    xmlWhitespaceSensitivity: "strict"
   });
 
   expect(formatted).toMatchSnapshot();
